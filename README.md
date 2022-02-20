@@ -14,3 +14,4 @@ JavaScript Discord bot for our CzechedSubstance community
 - you most probably shouldn't change anythin else than files inside `src/` folder
 - `./src/Command.ts` - interface for commands you'll be using
 - to add new command add new file to `src/commands/` folder and register it inside `src/Commands.ts` file
+- for every new feature please create new branch for it and when you think you are ready to publish open Pull Request on github!
