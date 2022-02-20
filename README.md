@@ -4,9 +4,13 @@ JavaScript Discord bot for our CzechedSubstance community
 - Node
 
 # Installation
-- run `npm i` in root directory
+- run `npm i` in root directory, this will install all necessary dependencies
 - copy `.env.Development` file and save it as `.env` and change TOKEN to your token
 
 # Running bot
-- run `npm run dev` this will start watching files in `src/` directory and automatically translate files from `src/*.ts` to `dist/*.js`
-- run `npm start` which start the bot (executes `/src/index.ts` respectively `/dist/index.js`)
+- run `npm start` which start the bot (executes `/src/index.ts`)
+
+# Development
+- you most probably shouldn't change anythin else than files inside `src/` folder
+- `./src/Command.ts` - interface for commands you'll be using
+- to add new command add new file to `src/commands/` folder and register it inside `src/Commands.ts` file
