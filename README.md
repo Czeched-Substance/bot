@@ -6,7 +6,7 @@ A Discord bot for our community
 
 C# .NET 6.0
 
-**IDE of your preference: **
+**IDE of your preferences:**
  - Visual Studio
  - Rider
 
