@@ -13,3 +13,5 @@ C# .NET 6.0
 **Recommended**
  - NuGet (Alt + Shift + 7)
  - Find Discord.NET v3.6.1
+
+**Token is hidden, you have to insert your own and try it on your bot, or DM me for the actual token**
