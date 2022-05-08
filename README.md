@@ -14,4 +14,4 @@ C# .NET 6.0
  - NuGet (Alt + Shift + 7)
  - Find Discord.NET v3.6.1
 
-**Token is hidden, you have to insert your own and try it on your bot, or DM me for the actual token**
+**The token is hidden, you have to insert your own into \Bot\bin\Debug\net6.0\token.txt and debug it on your bot, or DM me for the actual token**
