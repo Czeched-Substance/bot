@@ -17,8 +17,7 @@ namespace CzechedSubstance
 
             _client.Log += Log;
 
-            // Not the best solution, but considering the fact, it's a private repo, 
-            // I don't think it's a huge problem for now.
+            // Not the best solution, considering the fact, it's a public repository
             var token = "token";
             
             // More secure way to do this would be storing the token in a config or an EnvironmentVariable
