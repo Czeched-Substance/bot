@@ -16,12 +16,9 @@ namespace CzechedSubstance
             _client = new DiscordSocketClient();
 
             _client.Log += Log;
-
-            // Not the best solution, considering the fact, it's a public repository
-            var token = "token";
             
-            // More secure way to do this would be storing the token in a config or an EnvironmentVariable
-            // And then using .gitignore file
+            // Fair enough I guess, .gitignore
+            var token = File.ReadAllText("token.txt");
 
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
