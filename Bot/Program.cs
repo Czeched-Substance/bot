@@ -1,8 +1,11 @@
 ﻿using System.Threading.Tasks;
+using ConsoleApp1.Commands;
 using Discord;
 using Discord.WebSocket;
+using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
-namespace CzechedSubstance
+namespace ConsoleApp1
 {
     class Program
     {
@@ -16,6 +19,8 @@ namespace CzechedSubstance
             _client = new DiscordSocketClient();
 
             _client.Log += Log;
+            _client.SlashCommandExecuted += SlashCommandHandler;
+            _client.Ready += Client_Ready;
             
             // Fair enough I guess, .gitignore
             var token = File.ReadAllText("token.txt");
@@ -27,6 +32,17 @@ namespace CzechedSubstance
             await Task.Delay(-1);
             
             // The bot is ready
+        }
+
+        private async Task SlashCommandHandler(SocketSlashCommand command)
+        {
+            switch (command.Data.Name)
+            {
+                case "sendRules":
+                    RulesCommand rulesCommand = new RulesCommand();
+                    await rulesCommand.HandleRulesCommand(command);
+                    break;
+            }
         }
 
         private Task Log(LogMessage message)
