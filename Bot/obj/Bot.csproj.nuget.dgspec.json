@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zdenek.danhel\\Documents\\GitHub\\bot\\Bot\\Bot.csproj": {}
+    "C:\\Users\\zdene\\Documents\\bot\\Bot\\Bot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zdenek.danhel\\Documents\\GitHub\\bot\\Bot\\Bot.csproj": {
+    "C:\\Users\\zdene\\Documents\\bot\\Bot\\Bot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zdenek.danhel\\Documents\\GitHub\\bot\\Bot\\Bot.csproj",
+        "projectUniqueName": "C:\\Users\\zdene\\Documents\\bot\\Bot\\Bot.csproj",
         "projectName": "Bot",
-        "projectPath": "C:\\Users\\zdenek.danhel\\Documents\\GitHub\\bot\\Bot\\Bot.csproj",
-        "packagesPath": "C:\\Users\\zdenek.danhel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zdenek.danhel\\Documents\\GitHub\\bot\\Bot\\obj\\",
+        "projectPath": "C:\\Users\\zdene\\Documents\\bot\\Bot\\Bot.csproj",
+        "packagesPath": "C:\\Users\\zdene\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zdene\\Documents\\bot\\Bot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\zdenek.danhel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\zdene\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -41,6 +41,26 @@
             "Discord.Net": {
               "target": "Package",
               "version": "[3.6.1, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting.WindowsServices": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "SimpleInjector.Integration.GenericHost": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[11.2.1, )"
             }
           },
           "imports": [
@@ -58,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\zdenek.danhel\\.dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\zdene\\.dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

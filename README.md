@@ -14,4 +14,7 @@ C# .NET 6.0
  - NuGet (Alt + Shift + 7)
  - Find Discord.NET v3.6.1
 
-**The token is hidden, you have to insert your own into \Bot\bin\Debug\net6.0\token.txt and debug it on your bot, or DM me for the actual token**
+**The token and guildID are hidden.**
+ - You have to insert your own into \Bot\bin\Debug\net6.0\config.json and debug it on your bot and private server
+
+**For production guildID is not needed, but IsDebug() must be false!**
