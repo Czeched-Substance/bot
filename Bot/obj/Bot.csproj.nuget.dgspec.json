@@ -41,6 +41,26 @@
             "Discord.Net": {
               "target": "Package",
               "version": "[3.6.1, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting.WindowsServices": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "SimpleInjector.Integration.GenericHost": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[11.2.1, )"
             }
           },
           "imports": [
