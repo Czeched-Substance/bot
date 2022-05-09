@@ -17,12 +17,12 @@ public class RulesCommand : InteractionModuleBase<SocketInteractionContext>
     
     private String[] rules =
     {
-        "Uživateli je zakázáno jakýmkoliv způsobem urážet, ponižovat či zesměšňovat jiné členy naší komunity - pamatujte na základy slušného chování a respekt k ostatním.",
-        "Je striktně zakázáno šíření toxikomanie v jakékoliv formě, tzn. podávání informací o tom, jak pěstovat, prodávat, kupovat, distribuovat a nebo vyrábět substance. Tohle pravidlo se vztahuje i na soukromé zprávy",
-        "Je zakázáno rozesílat jakýkoliv nevhodný obsah mimo NSFW místnosti, stejně tak je striktně zakázáno sířit osobní údaje ostatních členů.",
-        "Dovolujeme si vyhradit pravidlo, že minimální věk pro vstup na server je 15 let.",
-        "Vše, co se píše na serveru je nutné brát s nadsázkou, tudíž žádný obsah nelze použít jako důkazní materiál.  Na serveru působí externí Harm Reduction profesionálové, kteří s porušováním zákonů nemají nic společného.",
-        "Je přísně zakázáno obcházet jakýkoliv trest, ať už pomocí více účtů, proxy či VPN. Pokud má člen jakýkoliv aktivní trest, musí si trest odpykat.",
+        "#Uživateli je zakázáno jakýmkoliv způsobem urážet, ponižovat či zesměšňovat jiné členy naší komunity - pamatujte na základy slušného chování a respekt k ostatním.",
+        "#Je striktně zakázáno šíření toxikomanie v jakékoliv formě, tzn. podávání informací o tom, jak pěstovat, prodávat, kupovat, distribuovat a nebo vyrábět substance. Tohle pravidlo se vztahuje i na soukromé zprávy",
+        "#Je zakázáno rozesílat jakýkoliv nevhodný obsah mimo NSFW místnosti, stejně tak je striktně zakázáno sířit osobní údaje ostatních členů.",
+        "#Vstup na server je zakázán osobám mladším 15 let.",
+        "#Vše, co se píše na serveru je nutné brát s nadsázkou, tudíž žádný obsah nelze použít jako důkazní materiál. Na serveru působí externí Harm Reduction profesionálové, kteří s porušováním zákonů nemají nic společného.",
+        "#Je přísně zakázáno obcházet jakýkoliv trest, ať už pomocí více účtů, proxy či VPN. Pokud má člen jakýkoliv aktivní trest, musí si trest odpykat.",
         "V neposlední řadě se zamyslete nad tím, co píšete, i když to není zmíněné v pravidlech. Vaše nepřiměřené chování může mít negativní dopad na psychiku ostatních členů, včetně posílání rad, které jsou hlouposti, zlehčování některých situací apod.",
         "Jakožto moderátoři si vyhrazujeme právo takové zprávy mazat, případně upozornit na jejich nepravdivé podklady, potrestat vás a také vás ze serveru zabanovat.",
         "Berte v potaz, že ctíme zákony České a Slovenské republiky, ToS Discordu a tak se vám může reakce může zdát nepřiměřená situaci.",
@@ -30,17 +30,23 @@ public class RulesCommand : InteractionModuleBase<SocketInteractionContext>
     
     private EmbedBuilder SimpleEmbedBuilder()
     {
+        var redCross = Emote.Parse("<a:syCross:783519674671169566>");
+        var greenCheck = Emote.Parse("<a:syVerifyCircle:845517382084329472>");
+        var readRules = Emote.Parse("<a:ReadTheRules:884641162785349662>");
+        
         var embed = new EmbedBuilder()
         {
-            Title = "Obecná pravidla serveru",
+            Title = $"Obecná pravidla serveru {readRules}",
+            Color = ColorUtil.setColor("#ff3e3d")
         };
 
         for(int i = 0; i < rules.Length; i++)
         {
-            embed.AddField("\u200b", $"⚠\n{i + 1}. {rules[i]}", false);
+            Emote emote = (rules[i].StartsWith("#") ? redCross : greenCheck);
+            string message = (rules[i].StartsWith("#") ? rules[i].Replace("#", "") : rules[i]);
+            
+            embed.AddField("\u200b", $"{emote}\n**{i + 1} » **{message}", false);
         }
-        
-        embed.WithColor(ColorUtil.setColor("#FFCC4D"));
 
         return embed;
     }
