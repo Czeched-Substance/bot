@@ -9,11 +9,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace ConsoleApp1
 {
-    public class program
+    public class Program
     {
         private DiscordSocketClient _client;        
         
-        public static Task Main(string[] args) => new program().MainAsync();
+        public static Task Main(string[] args) => new Program().MainAsync();
         
         public async Task MainAsync()
         {
