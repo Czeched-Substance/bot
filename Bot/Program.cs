@@ -13,7 +13,7 @@ namespace ConsoleApp1
     {
         private DiscordSocketClient _client;        
         
-        public static Task Main(string[] args) => new Program().MainAsync();
+        public static Task Main() => new Program().MainAsync();
         
         public async Task MainAsync()
         {
