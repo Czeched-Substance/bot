@@ -9,6 +9,7 @@ public class RulesCommand : InteractionModuleBase<SocketInteractionContext>
 {
     public InteractionService Commands { get; set; }
     private static Logger.Logger _logger;
+    private int index = 1;
     
     public RulesCommand(ConsoleLogger logger)
     {
@@ -30,31 +31,31 @@ public class RulesCommand : InteractionModuleBase<SocketInteractionContext>
     
     private EmbedBuilder SimpleEmbedBuilder()
     {
-        var redCross = Emote.Parse("<a:syCross:783519674671169566>");
+        var redCross   = Emote.Parse("<a:syCross:783519674671169566>");
+        var readRules  = Emote.Parse("<a:ReadTheRules:884641162785349662>");
         var greenCheck = Emote.Parse("<a:syVerifyCircle:845517382084329472>");
-        var readRules = Emote.Parse("<a:ReadTheRules:884641162785349662>");
         
         var embed = new EmbedBuilder()
         {
             Title = $"Obecná pravidla serveru {readRules}",
             Color = ColorUtil.setColor("#ff3e3d")
         };
-
-        for(int i = 0; i < rules.Length; i++)
+        
+        foreach (var message in rules)
         {
-            Emote emote = (rules[i].StartsWith("#") ? redCross : greenCheck);
-            string message = (rules[i].StartsWith("#") ? rules[i].Replace("#", "") : rules[i]);
-            
-            embed.AddField("\u200b", $"{emote}\n**{i + 1} » **{message}", false);
-        }
+            String mess = message.StartsWith('#') ? message.Replace("#", "") : message;
+            Emote emote = message.StartsWith('#') ? redCross : greenCheck;
 
+            embed.AddField("\u200b", $"{emote}\n**{index++} » **{mess}", false);
+        }
+        
         return embed;
     }
 
-    [SlashCommand("rulesgen", "A simple command, that generates Embed with rules.")]
+    [SlashCommand("rules", "A simple command, that generates Embed with rules.")]
     public async Task HandleRulesCommand()
     {
-        await _logger.Log(new LogMessage(LogSeverity.Info, "[RulesCommand], User: " + Context.User.Username + "has generated rules.", null));
+        await _logger.Log(new LogMessage(LogSeverity.Info, "[Rules], User: " + Context.User.Username + "has generated rules.", null));
         await RespondAsync(embed: SimpleEmbedBuilder().Build());
     }
 }
