@@ -1,4 +1,5 @@
 {
-    "guild_debug": "637702531681746985",
-    "token": "OTczMjA2MjAzNzk2NzE3Njc5.GGTb1x._qDeXm5T_Mr_MVFSuxETTyWqSHmXOpkvFsAhf4"
+    "prefix": "$",
+    "guild_debug": "guildId",
+    "token": "youToken"
 }
