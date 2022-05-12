@@ -1,6 +1,5 @@
 ﻿using Discord.Commands;
 using Discord.WebSocket;
-using ConsoleApp1.Logger.Log;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
