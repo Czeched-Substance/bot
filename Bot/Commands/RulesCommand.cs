@@ -54,7 +54,7 @@ public class RulesCommand : InteractionModuleBase<SocketInteractionContext>
     [SlashCommand("rules", "A simple command, that generates Embed with rules.")]
     public async Task HandleRulesCommand()
     {
-        await _logger.Log(new LogMessage(LogSeverity.Info, "[Rules], User " + Context.User.Username + " has generated rules.", null));
+        await _logger.Log(new LogMessage(LogSeverity.Info, "[Rules]", "User " + Context.User.Username + " has generated rules."));
         await RespondAsync(embed: SimpleEmbedBuilder().Build());
         // In case you wanted to send just a message
         //await Context.Channel.SendMessageAsync(embed: SimpleEmbedBuilder().Build());

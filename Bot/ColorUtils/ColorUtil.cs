@@ -15,12 +15,8 @@ public class ColorUtil
     {
         if (hex.StartsWith("#"))
             hex = hex.Substring(1);
-        
-        Console.WriteLine(hex);
 
         if (hex.Length != 6) throw new Exception("Color is not valid!");
-        
-        Console.WriteLine(hex);
 
         int r = int.Parse(hex.Substring(0, 2), NumberStyles.HexNumber);
         int g = int.Parse(hex.Substring(2, 2), NumberStyles.HexNumber);
