@@ -11,14 +11,9 @@ namespace ConsoleApp1
 {
     public class Program
     {
-<<<<<<< Updated upstream
-        private DiscordSocketClient _client;        
-        
-        public static Task Main(string[] args) => new Program().MainAsync();
-=======
         private DiscordSocketClient _client;
+
         public static Task Main() => new Program().MainAsync();
->>>>>>> Stashed changes
         
         public async Task MainAsync()
         
