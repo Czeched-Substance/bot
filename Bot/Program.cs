@@ -11,11 +11,17 @@ namespace ConsoleApp1
 {
     public class Program
     {
+<<<<<<< Updated upstream
         private DiscordSocketClient _client;        
         
         public static Task Main(string[] args) => new Program().MainAsync();
+=======
+        private DiscordSocketClient _client;
+        public static Task Main() => new Program().MainAsync();
+>>>>>>> Stashed changes
         
         public async Task MainAsync()
+        
         {
             var config = new ConfigurationBuilder()
                 .SetBasePath(AppContext.BaseDirectory)
@@ -29,7 +35,8 @@ namespace ConsoleApp1
                     // DiscordSocketClient
                     .AddSingleton(x => new DiscordSocketClient(new DiscordSocketConfig
                     {
-                        GatewayIntents = GatewayIntents.AllUnprivileged,
+                        GatewayIntents = GatewayIntents.All,
+                        UseInteractionSnowflakeDate = false,
                         LogGatewayIntentWarnings = false,
                         AlwaysDownloadUsers = true,
                         LogLevel = LogSeverity.Debug
@@ -37,6 +44,7 @@ namespace ConsoleApp1
                     
 			        // Register Logger
                     .AddTransient<ConsoleLogger>()
+                    
                     // Slash command Handler
                     .AddSingleton(x => new InteractionService(x.GetRequiredService<DiscordSocketClient>()))
                     
@@ -63,7 +71,7 @@ namespace ConsoleApp1
             var config = provider.GetRequiredService<IConfigurationRoot>();
 
             await provider.GetRequiredService<InteractionHandler>().InitializeAsync();
-            
+
             // Client log + Slash commands log
             _client.Log += _ => provider.GetRequiredService<ConsoleLogger>().Log(_);
             commands.Log += _ => provider.GetRequiredService<ConsoleLogger>().Log(_);
@@ -86,9 +94,9 @@ namespace ConsoleApp1
         static bool IsDebug()
         {
 #if DEBUG
-            return true;
-#else
             return false;
+#else
+            return true;
 #endif
         }
     }

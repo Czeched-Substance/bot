@@ -30,13 +30,18 @@ public class RulesCommand : InteractionModuleBase<SocketInteractionContext>
     
     private EmbedBuilder SimpleEmbedBuilder()
     {
+<<<<<<< Updated upstream
         var redCross = Emote.Parse("<a:syCross:783519674671169566>");
         var greenCheck = Emote.Parse("<a:syVerifyCircle:845517382084329472>");
         var readRules = Emote.Parse("<a:ReadTheRules:884641162785349662>");
+=======
+        var redCross   = Emote.Parse("<a:ne:974371979874410507>");
+        var greenCheck = Emote.Parse("<a:ano:974371973775888425>");
+>>>>>>> Stashed changes
         
         var embed = new EmbedBuilder()
         {
-            Title = $"Obecná pravidla serveru {readRules}",
+            Title = $"Obecná pravidla serveru",
             Color = ColorUtil.setColor("#ff3e3d")
         };
 
@@ -54,7 +59,13 @@ public class RulesCommand : InteractionModuleBase<SocketInteractionContext>
     [SlashCommand("rulesgen", "A simple command, that generates Embed with rules.")]
     public async Task HandleRulesCommand()
     {
+<<<<<<< Updated upstream
         await _logger.Log(new LogMessage(LogSeverity.Info, "[RulesCommand], User: " + Context.User.Username + "has generated rules.", null));
+=======
+        await _logger.Log(new LogMessage(LogSeverity.Info, "[Rules]", "User " + Context.User.Username + " has generated rules."));
+>>>>>>> Stashed changes
         await RespondAsync(embed: SimpleEmbedBuilder().Build());
+        // In case you wanted to send just a message
+        // await Context.Channel.SendMessageAsync(embed: SimpleEmbedBuilder().Build());
     }
 }
