@@ -50,7 +50,8 @@ namespace ConsoleApp1
                     {
                         LogLevel = LogSeverity.Debug,
                         DefaultRunMode = Discord.Commands.RunMode.Async
-                    })))
+                    }))
+                    .AddSingleton<PrefixHandler>())
                 .Build();
 
             await RunAsync(host);
